@@ -9,6 +9,6 @@ module.exports = merge(common, {
     filename: "bundle.js",
   },
   devServer: {
-    port: 9090,
+    port: 9000,
   },
 });
