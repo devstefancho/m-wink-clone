@@ -1,0 +1,36 @@
+@import '~antd/dist/antd.css';
+$primary-color : #00bbd4;
+$divider-color : #F5F5F5;
+
+.HeaderWrapper, .ContentWrapper, .FooterWrapper {
+  background-color: white;
+}
+
+
+.TabWrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+.Divider {
+  border-top: 1px solid gray;
+  background-color: $divider-color;
+}
+
+.Button {
+  border-radius: 20px;
+  border :none;
+
+ &:focus{
+   background-color: $primary-color;
+   color: white;
+   border-color: gray;
+ }
+}
+
+.Logo {
+  width: 72px;
+  display: block;
+  margin: 10px auto;
+}

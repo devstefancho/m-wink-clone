@@ -1,16 +1,31 @@
 import React, {Fragment} from "react";
-import './style.css'
-import {Button} from "./components/Button";
+import './server'
+import HeaderWrapper from "./header";
+import ContentsWrapper from "./contents";
+import FooterWrapper from "./footer";
+import { Layout } from "antd";
+import './stylesheet/main.scss'
 
+const {Header, Content, Footer} = Layout
 class App extends React.Component {
    render() {
        return (
            <Fragment>
-               <div className="Title">TEST</div>
-               <Button />
+               <Layout>
+                   <Header className="HeaderWrapper" >
+                       <HeaderWrapper />
+                   </Header>
+                   <Content className="ContentWrapper">
+                       <ContentsWrapper />
+                   </Content>
+                   <Footer className="FooterWrapper" >
+                       <FooterWrapper />
+                   </Footer>
+               </Layout>
            </Fragment>
            )
    }
 }
+
 
 export default App;

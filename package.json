@@ -7,9 +7,13 @@
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-react": "^7.7.4",
+    "antd": "^4.8.5",
     "babel-loader": "^8.0.6",
+    "node-sass": "^5.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "sass": "^1.29.0",
+    "sass-loader": "^10.1.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
@@ -19,6 +23,7 @@
     "css-loader": "^5.0.1",
     "html-loader": "^1.3.0",
     "html-webpack-plugin": "^4.4.1",
+    "miragejs": "^0.1.41",
     "style-loader": "^2.0.0"
   },
   "scripts": {
