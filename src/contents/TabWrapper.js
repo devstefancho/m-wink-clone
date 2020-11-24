@@ -1,23 +1,6 @@
 import React from 'react';
 import TabMenu from "./TabMenu";
 
-const menus = [
-    {name: "홈"},
-    {name: "과목별 학습", subMenu: [
-            {name: "한글 국어"},
-            {name: "수학 연산"},
-            {name: "영어"},
-            {name: "독서"},
-            {name: "선택 활동"},
-        ]},
-    {name: "연령별 학습", subMenu: [
-            {name: "4~6세"},
-            {name: "7세"},
-            {name: "8세"}
-        ]},
-    {name: "유료학습 신청"},
-    {name: "윙크선생님 모집"},
-];
 const WhiteSpace = (props) => {
     return (
         <div style={{height:`${10}px`}} className="Divider" />
@@ -28,8 +11,19 @@ class TabWrapper extends React.Component {
     constructor(props) {
         super(props);
         this.state= {
+            menus: [],
             menuIdx: 0
         };
+    }
+
+    componentDidMount() {
+        fetch("/api/menus")
+            .then(response => {console.log('fetch data: ', response);
+                return response.json();})
+            .then(json => {
+               console.log('json: ', json)
+                this.setState({menus: json})
+            })
     }
 
     onClickMenu(id) {
@@ -42,7 +36,7 @@ class TabWrapper extends React.Component {
     }
 
     render() {
-        const {menuIdx} = this.state;
+        const {menus, menuIdx} = this.state;
         return (
             <div>
                 <div className={"TabWrapper tab-wrapper"}>
@@ -56,7 +50,7 @@ class TabWrapper extends React.Component {
                                 onClick={this.onClickMenu.bind(this)} />) )}
                 </div>
                 <WhiteSpace />
-                {menus[menuIdx].subMenu &&
+                {menus[menuIdx] && menus[menuIdx].subMenu &&
                 <div className={"TabWrapper"}>
                     {menus[menuIdx].subMenu.map(
                         (menu,idx) =>

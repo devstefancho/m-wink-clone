@@ -34,3 +34,12 @@ $divider-color : #F5F5F5;
   display: block;
   margin: 10px auto;
 }
+
+.footer-copyright {
+  text-align: center;
+}
+
+.footer-menus {
+  display: flex;
+  justify-content: space-around;
+}
