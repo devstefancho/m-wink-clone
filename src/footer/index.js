@@ -5,7 +5,7 @@ class Footer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            info: [],
+            info: { contact: []},
         }
     }
     componentDidMount() {
@@ -30,12 +30,12 @@ class Footer extends React.Component {
                 && info.contact.map( str =>
                     <div
                         key={str}
-                        className={"footer footer-contact"}>
+                        className={"footer-contact"}>
                         {str}
                     </div>)}
                 </div>
                 <Router>
-                    <div className={"footer footer-menus"}>
+                    <div className={"footer-menus"}>
                         { info
                         && info.menus
                         && info.menus.map( str =>

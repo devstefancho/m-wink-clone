@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import logo from '../source/img/common/logo.png'
 
 class Header extends React.Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class Header extends React.Component {
         return(
             <Fragment>
                 <div>
-                    <img className="Logo" src="https://s.wink.co.kr/mobile/new_images/common/logo.png" alt="Wink Logo"/>
+                    <img className={"logo"} src={logo} alt="Wink Logo"/>
                 </div>
             </Fragment>
             )

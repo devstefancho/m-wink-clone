@@ -2,25 +2,31 @@
 $primary-color : #00bbd4;
 $divider-color : #F5F5F5;
 
-.HeaderWrapper, .ContentWrapper, .FooterWrapper {
+.wrapper {
   background-color: white;
 }
 
 
-.TabWrapper {
+.tab-wrapper {
   display: flex;
   justify-content: space-around;
   margin-bottom: 5px;
 }
 
-.Divider {
+.divider {
   border-top: 1px solid gray;
   background-color: $divider-color;
 }
 
-.Button {
+.button {
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
   border-radius: 20px;
   border :none;
+  font-weight: bold;
+  font-size: 13px;
+  align-content: center;
 
  &:focus{
    background-color: $primary-color;
@@ -29,7 +35,7 @@ $divider-color : #F5F5F5;
  }
 }
 
-.Logo {
+.logo {
   width: 72px;
   display: block;
   margin: 10px auto;
@@ -42,4 +48,14 @@ $divider-color : #F5F5F5;
 .footer-menus {
   display: flex;
   justify-content: space-around;
+}
+
+.content-img {
+  max-width: 100%;
+}
+
+.banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }

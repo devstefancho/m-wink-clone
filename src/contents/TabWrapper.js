@@ -1,67 +1,68 @@
 import React from 'react';
 import TabMenu from "./TabMenu";
-
-const WhiteSpace = (props) => {
-    return (
-        <div style={{height:`${10}px`}} className="Divider" />
-    )
-}
+import TabDivider from "./TabDivider";
 
 class TabWrapper extends React.Component {
     constructor(props) {
         super(props);
-        this.state= {
-            menus: [],
-            menuIdx: 0
-        };
     }
 
-    componentDidMount() {
-        fetch("/api/menus")
-            .then(response => {console.log('fetch data: ', response);
-                return response.json();})
-            .then(json => {
-               console.log('json: ', json)
-                this.setState({menus: json})
-            })
+    onClickMenu(id, subId) {
+        subId = 0;
+        console.log('on click main menu: ', id);
+        this.props.onClick(id, subId);
     }
 
-    onClickMenu(id) {
-        console.log(id);
-        this.setState({menuIdx: id});
-    }
-
-    onClickSubMenu(id) {
-        console.log('on click sub menu ', id);
+    onClickSubMenu(subId) {
+        console.log('on click sub menu: ', subId);
+        //set id(main menu) as current state
+        this.props.onClick(this.id, subId);
     }
 
     render() {
-        const {menus, menuIdx} = this.state;
+        this.menus = this.props.menus;
+        this.id = this.props.id;
+        this.subId = this.props.subId;
+        console.log('==Q== Wrapper render menus', this.menus)
+        console.log('==Q== test: ', this.test)
+        console.log('id, subid', this.id, ', ', this.subId)
         return (
             <div>
-                <div className={"TabWrapper tab-wrapper"}>
-                    {menus.map(
+                <div className="tab-wrapper">
+                    {this.menus && this.menus.map(
                         (menu,idx) =>
                             (<TabMenu
                                 key={idx}
                                 idx={idx}
                                 menu={menu.name}
-                                number={menus.length}
+                                number={this.menus.length}
                                 onClick={this.onClickMenu.bind(this)} />) )}
                 </div>
-                <WhiteSpace />
-                {menus[menuIdx] && menus[menuIdx].subMenu &&
-                <div className={"TabWrapper"}>
-                    {menus[menuIdx].subMenu.map(
-                        (menu,idx) =>
-                            (<TabMenu
-                                key={idx}
-                                idx={idx}
-                                menu={menu.name}
-                                number={menus[menuIdx].subMenu.length}
-                                onClick={this.onClickSubMenu.bind(this)} />) )}
-                </div>}
-                <WhiteSpace />
+                <TabDivider />
+
+                { this.menus[this.id]
+                    && this.menus[this.id].subMenu
+                    && <div className="tab-wrapper">
+                        {this.id === 1 && this.menus[this.id].subMenu.map(
+                            (menu,idx) =>
+                                (<TabMenu
+                                    key={idx}
+                                    idx={idx}
+                                    menu={menu.name}
+                                    number={this.menus[this.id].subMenu.length}
+                                    onClick={this.onClickSubMenu.bind(this)} />) )}
+                        {this.id === 2 && this.menus[this.id].subMenu.map(
+                            (menu,idx) =>
+                                (<TabMenu
+                                    key={idx}
+                                    idx={idx}
+                                    menu={menu.name}
+                                    number={this.menus[this.id].subMenu.length}
+                                    onClick={this.onClickSubMenu.bind(this)} />) )}
+                        </div>
+                }
+                <TabDivider />
+
             </div>
         );
     }
