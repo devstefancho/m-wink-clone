@@ -6,6 +6,14 @@ import FooterWrapper from "./footer";
 import { Layout } from "antd";
 import './stylesheet/main.scss'
 import Banner from "./Banner";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import DisplayBanner from "./contents/DisplayBanner.js/DisplayBanner";
+
 
 const {Header, Content, Footer} = Layout
 class App extends React.Component {
@@ -32,23 +40,38 @@ class App extends React.Component {
     }
 
     render() {
-       return (
-           <Fragment>
-               <Layout>
-                   <Header className="wrapper header-wrapper" >
-                       <HeaderWrapper />
-                   </Header>
-                   <Content className="wrapper content-wrapper">
-                       <ContentsWrapper />
-                   </Content>
-                   <Footer className="wrapper footer-wrapper " >
-                       <FooterWrapper />
-                   </Footer>
-                   {this.state.banner && <Banner />}
-               </Layout>
-           </Fragment>
-           )
-   }
+        return (
+            <Fragment>
+                <Router>
+                    <Link to="/free-trial">
+                        {this.state.banner && <Banner />}
+                    </Link>
+
+                    <Layout>
+                        <Header className="wrapper header-wrapper" >
+                            <HeaderWrapper />
+                        </Header>
+                        <Switch>
+                            <Route exact path="/">
+                                <Content className="wrapper content-wrapper">
+                                    <ContentsWrapper />
+                                </Content>
+                            </Route>
+                            <Route path="/free-trial">
+                                <Content className="wrapper content-wrapper">
+                                   <DisplayBanner />
+                                </Content>
+                            </Route>
+                        </Switch>
+                        <Footer className="wrapper footer-wrapper " >
+                            <FooterWrapper />
+                        </Footer>
+                    </Layout>
+
+                </Router>
+            </Fragment>
+        )
+    }
 }
 
 

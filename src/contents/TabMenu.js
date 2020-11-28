@@ -15,6 +15,7 @@ class TabMenu extends React.Component {
     render() {
         this.number = this.props.number;
         this.menu = this.props.menu;
+        console.log('amount of menus: ', this.number)
         return (
             <div>
                 <Button

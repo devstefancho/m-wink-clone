@@ -16,6 +16,13 @@ export const menus = [
     {name: ["윙크선생님", "br", "모집"]},
 ];
 
+export const banner= {
+    menus: [
+        ["<"], ['무료학습 신청'], ['HOME']
+    ]
+}
+
+
 export const footer = {
     copyright: ["(주)단비교육 서울 강남구 대치동 967-5 정우빌딩",
         "대표이사 권영금",
