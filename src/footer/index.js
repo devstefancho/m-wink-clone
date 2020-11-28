@@ -25,35 +25,59 @@ class Footer extends React.Component {
         const {info} = this.state;
         return(
             <Fragment>
-                <div>{ info
-                && info.contact
-                && info.contact.map( str =>
-                    <div
-                        key={str}
-                        className={"footer-contact"}>
-                        {str}
-                    </div>)}
+                <div className={"footer-contact"}>
+                    <div>
+                        { info
+                        && info.contact
+                        && info.contact.map( str =>
+                            <div key={str}>
+                                {str}
+                            </div>)}
+                    </div>
+                    <div className="btn-vertical-align">
+                            <button className="btn btn-call">전화연결</button>
+                    </div>
                 </div>
-                <Router>
                     <div className={"footer-menus"}>
+                        {/* menu에 링크를 붙이려고 우선 하드코딩 해둠 */}
                         { info
                         && info.menus
-                        && info.menus.map( str =>
-                            <div key={str} >
-                                <Link>
-                                    {str}
-                                </Link>
-                            </div>
+                        && info.menus.map( str =>{
+                                if(str === "회사소개") {
+                                   return (
+                                       <div key={str} className="footer-menus_item" >
+                                           <Link to="/client/mobile/company">
+                                               {str}
+                                           </Link>
+                                       </div>
+                                   )
+                                }
+                            if(str === "이용약관") {
+                                return(
+                                    <div key={str} className="footer-menus_item" >
+                                        <a target="_blank" href="https://s.wink.co.kr/danbi_common/html/agreement.html">
+                                            {str}
+                                        </a>
+                                    </div>
+                                )
+                            }
+                            if(str === "개인정보처리방침") {
+                                return(
+                                    <div key={str} className="footer-menus_item" >
+                                        <a target="_blank" href="https://s.wink.co.kr/danbi_common/html/privacy_policy.html">
+                                            {str}
+                                        </a>
+                                    </div>
+                                )
+                                }
+                        }
                         )}
                     </div>
-                </Router>
-                <div>
+                <div className={"footer footer-copyright"}>
                     { info
                         && info.copyright
                         && info.copyright.map( str =>
-                        <div
-                            key={str}
-                            className={"footer footer-copyright"}>
+                        <div key={str} >
                             {str}
                         </div> )
                     }

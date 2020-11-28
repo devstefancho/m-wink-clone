@@ -12,7 +12,10 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import DisplayBanner from "./contents/DisplayBanner.js/DisplayBanner";
+import DisplayBanner from "./contents/DisplayBanner/DisplayBanner";
+import TabDivider from "./contents/TabDivider";
+import DisplayContents from "./contents/DisplayContents";
+import DisplayCompany from "./contents/DisplayCompany/DisplayCompany";
 
 
 const {Header, Content, Footer} = Layout
@@ -31,6 +34,7 @@ class App extends React.Component {
     handleScroll() {
        // console.log('scrollY ', window.scrollY);
         let currentScrollY = window.scrollY;
+        // console.log('current: ', currentScrollY);
         if(currentScrollY > 64) {
             this.setState({banner: true});
         }
@@ -43,9 +47,7 @@ class App extends React.Component {
         return (
             <Fragment>
                 <Router>
-                    <Link to="/free-trial">
-                        {this.state.banner && <Banner />}
-                    </Link>
+                    {this.state.banner && <Banner />}
                     <Layout>
                         <Link to="/">
                             <Header className="wrapper header-wrapper" >
@@ -63,12 +65,17 @@ class App extends React.Component {
                                    <DisplayBanner banner={this.state.banner} />
                                 </Content>
                             </Route>
+                            <Route path="/client/mobile/company">
+                                <Content className="wrapper content-wrapper">
+                                    <DisplayCompany banner={this.state.banner} />
+                                </Content>
+                            </Route>
                         </Switch>
                         <Footer className="wrapper footer-wrapper " >
                             <FooterWrapper />
                         </Footer>
                     </Layout>
-
+                    <TabDivider />
                 </Router>
             </Fragment>
         )

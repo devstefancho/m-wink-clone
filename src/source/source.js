@@ -22,6 +22,11 @@ export const banner= {
     ]
 }
 
+export const company= {
+    menus: [
+        ["<"], ['회사소개'], ['HOME']
+    ]
+}
 
 export const footer = {
     copyright: ["(주)단비교육 서울 강남구 대치동 967-5 정우빌딩",

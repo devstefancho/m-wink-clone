@@ -2,9 +2,18 @@
 $primary-color : #00bbd4;
 $divider-color : #F5F5F5;
 $background-color : white;
+$border-color: rgb(221, 221, 211);
+$banner-size: 95px;
 
 .wrapper {
   background-color: $background-color;
+  max-width: 100%;
+}
+
+.footer-wrapper {
+  padding-left: 0 ;
+  padding-right: 0;
+  padding-bottom: $banner-size;
 }
 
 
@@ -45,11 +54,54 @@ $background-color : white;
 
 .footer-copyright {
   text-align: center;
+  padding: 10px;
 }
 
 .footer-menus {
   display: flex;
   justify-content: space-around;
+  padding: 10px;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  & a{
+    color: #212121;
+  }
+}
+
+.footer-contact {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.footer-menus_item {
+  text-align: center;
+  flex-basis: 100%;
+}
+
+.btn-call {
+  color: $primary-color;
+  background-color: $background-color;
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  white-space: nowrap;
+  text-align: center;
+  border: 1px solid $primary-color;
+  margin: 1px 0;
+  top : 10px;
+}
+.btn-vertical-align {
+
 }
 
 .content-img {
