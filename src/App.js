@@ -31,7 +31,7 @@ class App extends React.Component {
     handleScroll() {
        // console.log('scrollY ', window.scrollY);
         let currentScrollY = window.scrollY;
-        if(currentScrollY > 70) {
+        if(currentScrollY > 64) {
             this.setState({banner: true});
         }
         else {
@@ -46,20 +46,21 @@ class App extends React.Component {
                     <Link to="/free-trial">
                         {this.state.banner && <Banner />}
                     </Link>
-
                     <Layout>
-                        <Header className="wrapper header-wrapper" >
-                            <HeaderWrapper />
-                        </Header>
+                        <Link to="/">
+                            <Header className="wrapper header-wrapper" >
+                                <HeaderWrapper />
+                            </Header>
+                        </Link>
                         <Switch>
                             <Route exact path="/">
                                 <Content className="wrapper content-wrapper">
-                                    <ContentsWrapper />
+                                    <ContentsWrapper banner={this.state.banner} />
                                 </Content>
                             </Route>
                             <Route path="/free-trial">
                                 <Content className="wrapper content-wrapper">
-                                   <DisplayBanner />
+                                   <DisplayBanner banner={this.state.banner} />
                                 </Content>
                             </Route>
                         </Switch>

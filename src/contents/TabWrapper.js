@@ -23,11 +23,11 @@ class TabWrapper extends React.Component {
         this.menus = this.props.menus;
         this.id = this.props.id;
         this.subId = this.props.subId;
+        this.banner = this.props.banner;
         console.log('==Q== Wrapper render menus', this.menus)
-        console.log('==Q== test: ', this.test)
         console.log('id, subid', this.id, ', ', this.subId)
         return (
-            <div>
+            <div className={this.banner ? "sticky" : ""}>
                 <div className="tab-wrapper">
                     {this.menus && this.menus.map(
                         (menu,idx) =>
@@ -61,7 +61,6 @@ class TabWrapper extends React.Component {
                                     onClick={this.onClickSubMenu.bind(this)} />) )}
                         </div>
                 }
-                <TabDivider />
 
             </div>
         );

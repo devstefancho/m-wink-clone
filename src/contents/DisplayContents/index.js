@@ -5,11 +5,11 @@ import LearnByAges from "./LearnByAges";
 import Registration from "./Registration";
 import Recruit from "./Recruit";
 
-function DisplayContents({id, subId}) {
+function DisplayContents({id, subId, banner}) {
     console.log('DisplayContents')
     console.table({id, subId})
     return (
-        <div>
+        <div className={banner ? "sticky_content" : ""}>
             {id === 0 && <Home />}
             {id === 1 && <LearnBySubject subId={subId} />}
             {id === 2 && <LearnByAges subId={subId}/>}

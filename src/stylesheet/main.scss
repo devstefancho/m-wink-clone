@@ -1,9 +1,10 @@
 @import '~antd/dist/antd.css';
 $primary-color : #00bbd4;
 $divider-color : #F5F5F5;
+$background-color : white;
 
 .wrapper {
-  background-color: white;
+  background-color: $background-color;
 }
 
 
@@ -11,6 +12,7 @@ $divider-color : #F5F5F5;
   display: flex;
   justify-content: space-around;
   margin-bottom: 5px;
+  height: 50px;
 }
 
 .divider {
@@ -58,4 +60,15 @@ $divider-color : #F5F5F5;
   position: fixed;
   bottom: 0;
   left: 0;
+}
+
+.sticky {
+  background-color: $background-color;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky_content {
+  padding-top: 50px;
 }

@@ -30,11 +30,22 @@ class Contents extends React.Component {
         // 아래는 됨
         console.log('==Q== Container Render menus', this.state.menus);
         // return의 props로는 안넘가는 것 처럼 보임.
+        this.banner = this.props.banner
         const {menus, index} = this.state;
         return(
             <Fragment>
-                <TabWrapper test={"testing"} menus={menus} id={index.id} subId={index.subId} onClick={this.onClickMenuRoot.bind(this)} />
-                <DisplayContents id={index.id} subId={index.subId}/>
+                <TabWrapper
+                    menus={menus}
+                    id={index.id}
+                    subId={index.subId}
+                    onClick={this.onClickMenuRoot.bind(this)}
+                    banner={this.banner}
+                />
+                <DisplayContents
+                    id={index.id}
+                    subId={index.subId}
+                    banner={this.banner}
+                />
             </Fragment>
             )
     }
