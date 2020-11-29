@@ -1,6 +1,7 @@
 @import '~antd/dist/antd.css';
 $primary-color : #00bbd4;
 $divider-color : #F5F5F5;
+$divider-border-color : #dddddd;
 $background-color : white;
 $border-color: rgb(221, 221, 211);
 $banner-size: 95px;
@@ -25,8 +26,9 @@ $banner-size: 95px;
 }
 
 .divider {
-  border-top: 1px solid gray;
+  border-top: 0.5px solid $divider-border-color;
   background-color: $divider-color;
+  height: 5px;
 }
 
 .button {
@@ -38,6 +40,10 @@ $banner-size: 95px;
   font-weight: bold;
   font-size: 13px;
   align-content: center;
+  padding: 0;
+  color: rgb(117, 117, 117);
+  line-height: 13px;
+  letter-spacing: -1px;
 
  &:focus{
    background-color: $primary-color;
@@ -50,6 +56,7 @@ $banner-size: 95px;
   width: 72px;
   display: block;
   margin: 10px auto;
+  padding-top: 12px;
 }
 
 .footer-copyright {
@@ -98,10 +105,9 @@ $banner-size: 95px;
   text-align: center;
   border: 1px solid $primary-color;
   margin: 1px 0;
-  top : 10px;
 }
 .btn-vertical-align {
-
+  padding-top: inherit;
 }
 
 .content-img {
@@ -113,6 +119,28 @@ $banner-size: 95px;
   bottom: 0;
   left: 0;
 }
+.banner_kakao {
+  position: fixed;
+  bottom: 10.5vh;
+  left: 5vw;
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2% 1%;
+  border-radius: 30px;
+  line-height: 16.1px;
+
+  & .kakao {
+    background: url(https://s.wink.co.kr/mobile/1.1.0/main/ico_kakao.png) top center no-repeat;
+    background-size: 30px;
+    padding-top: 100%;
+
+    & p {
+      color: white;
+      text-align: center;
+    }
+  }
+}
+
 
 .sticky {
   background-color: $background-color;
@@ -123,4 +151,31 @@ $banner-size: 95px;
 
 .sticky_content {
   padding-top: 50px;
+}
+
+.detail_button_wrap {
+  margin: 15px;
+}
+
+.detail_button {
+    color: #f03c78;
+    font-size: 1.3em;
+    border: 1px solid #dadada;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    display: block;
+    outline: 0 none;
+    -webkit-appearance: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    text-align: center;
+    height: 47px;
+    line-height: 47px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    white-space: nowrap;
+    background-color: #fff;
 }
