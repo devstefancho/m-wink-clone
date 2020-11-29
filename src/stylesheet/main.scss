@@ -181,3 +181,18 @@ $banner-size: 95px;
     white-space: nowrap;
     background-color: #fff;
 }
+
+.button .icon {
+  size: 2em;
+  color: $primary-color
+}
+
+.button .icon-left  {
+  float: left;
+  margin-left: 20px;
+}
+
+.button .icon-right {
+  float: right;
+  margin-right: 20px;
+}
