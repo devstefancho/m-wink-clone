@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import TabMenu from "./TabMenu";
 import TabDivider from "./TabDivider";
 import TabSubMenu from "./TabSubMenu";
+import {Route, Switch} from "react-router-dom";
 
 class TabWrapper extends React.Component {
     constructor(props) {
@@ -46,24 +47,30 @@ class TabWrapper extends React.Component {
                 <Fragment>
                     <TabDivider />
                     <div className="tab-wrapper">
-                        {this.id === 1 && this.menus[this.id].subMenu.map(
-                            (menu,idx) =>
-                                (<TabSubMenu
-                                    key={idx}
-                                    idx={idx}
-                                    menu={menu.name}
-                                    number={this.menus[this.id].subMenu.length}
-                                    url={menu.url}
-                                    onClick={this.onClickSubMenu.bind(this)} />) )}
-                        {this.id === 2 && this.menus[this.id].subMenu.map(
-                            (menu,idx) =>
-                                (<TabSubMenu
-                                    key={idx}
-                                    idx={idx}
-                                    menu={menu.name}
-                                    url={menu.url}
-                                    number={this.menus[this.id].subMenu.length}
-                                    onClick={this.onClickSubMenu.bind(this)} />) )}
+                        <Switch>
+                            <Route path="/subject">
+                                {this.menus[this.id].subMenu.map(
+                                    (menu,idx) =>
+                                        (<TabSubMenu
+                                            key={idx}
+                                            idx={idx}
+                                            menu={menu.name}
+                                            number={this.menus[this.id].subMenu.length}
+                                            url={menu.url}
+                                            onClick={this.onClickSubMenu.bind(this)} />) )}
+                            </Route>
+                            <Route path="/age">
+                                {this.menus[this.id].subMenu.map(
+                                    (menu,idx) =>
+                                        (<TabSubMenu
+                                            key={idx}
+                                            idx={idx}
+                                            menu={menu.name}
+                                            url={menu.url}
+                                            number={this.menus[this.id].subMenu.length}
+                                            onClick={this.onClickSubMenu.bind(this)} />) )}
+                            </Route>
+                        </Switch>
                     </div>
                 </Fragment>
                 }
