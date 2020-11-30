@@ -22,17 +22,18 @@ class HomeCarousel extends React.Component {
 
     render() {
         return (
-            <WingBlank>
-                <Carousel
-                    autoplay={false}
-                    infinite
-                    beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-                    afterChange={index => console.log('slide to', index)}
-                >
-                    {this.state.data.map(val => (
+            <div className="carousel-container">
+                <WingBlank>
+                    <Carousel
+                        autoplay={false}
+                        infinite
+                        beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+                        afterChange={index => console.log('slide to', index)}
+                    >
+                        {this.state.data.map(val => (
                             <video
                                 src={val.video}
-                                poster={val.image}
+                                poster={`../../${val.image}`}
                                 controls
                                 style={{ width: '100%', verticalAlign: 'top' }}
                                 onLoad={() => {
@@ -41,9 +42,10 @@ class HomeCarousel extends React.Component {
                                     this.setState({ imgHeight: 'auto' });
                                 }}
                             />
-                    ))}
-                </Carousel>
-            </WingBlank>
+                        ))}
+                    </Carousel>
+                </WingBlank>
+            </div>
         );
     }
 }

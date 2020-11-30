@@ -1,6 +1,7 @@
 import React from 'react';
-import bannerImage from '../src/source/img/common/btn_fixed_experience.png'
 import {Link} from "react-router-dom";
+
+const imgSrc = "https://s.wink.co.kr/mobile/1.1.0/common/btn_fixed_experience.png"
 
 function Banner(props) {
     return (
@@ -15,8 +16,8 @@ function Banner(props) {
                 </a>
 
             </div>
-            <Link to="/free-trial">
-                <img src={bannerImage} alt="" className="content-img banner" />
+            <Link to="/experience">
+                <img src={imgSrc} alt="" className="content-img banner" />
             </Link>
         </div>
     );

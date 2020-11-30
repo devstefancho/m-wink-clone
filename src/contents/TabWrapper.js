@@ -36,6 +36,7 @@ class TabWrapper extends React.Component {
                                 idx={idx}
                                 menu={menu.name}
                                 number={this.menus.length}
+                                url={menu.url}
                                 onClick={this.onClickMenu.bind(this)} />) )}
                 </div>
                 { this.menus[this.id]
@@ -51,6 +52,7 @@ class TabWrapper extends React.Component {
                                     idx={idx}
                                     menu={menu.name}
                                     number={this.menus[this.id].subMenu.length}
+                                    url={menu.url}
                                     onClick={this.onClickSubMenu.bind(this)} />) )}
                         {this.id === 2 && this.menus[this.id].subMenu.map(
                             (menu,idx) =>
@@ -58,6 +60,7 @@ class TabWrapper extends React.Component {
                                     key={idx}
                                     idx={idx}
                                     menu={menu.name}
+                                    url={menu.url}
                                     number={this.menus[this.id].subMenu.length}
                                     onClick={this.onClickSubMenu.bind(this)} />) )}
                     </div>

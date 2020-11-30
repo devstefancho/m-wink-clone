@@ -1,20 +1,20 @@
 export const menus = [
-    {name: ["홈"]},
+    {name: ["홈"], url: "/"},
     {name: ["과목별 학습"], subMenu: [
-            {name: ["한글 국어"]},
-            {name: ["수학 연산"]},
-            {name: ["영어"]},
-            {name: ["독서"]},
-            {name: ["선택 활동"]},
-        ]},
+            {name: ["한글 국어"], url: "/subject/kor"},
+            {name: ["수학 연산"], url: "/subject/math"},
+            {name: ["영어"], url: "/subject/eng"},
+            {name: ["독서"], url: "/subject/reading"},
+            {name: ["선택 활동"], url: "/subject/activity"},
+        ], url: "/subject/kor"},
     {name: ["연령별 학습"], subMenu: [
-            {name:["4~6세"] },
-            {name:["7세"] },
-            {name:["8세"]}
-        ]},
-    {name: ["유료학습", "br", "신청"]},
-    {name: ["윙크선생님", "br", "모집"]},
-];
+            {name:["4~6세"], url: "/age/begin"},
+            {name:["7세"], url: "/age/middle" },
+            {name:["8세"], url: "/age/high"}
+        ], url: "/age/begin"},
+    {name: ["유료학습", "br", "신청"], url: "/apply"},
+    {name: ["윙크선생님", "br", "모집"], url: "/teacher"},
+]   ;
 
 export const banner= {
     menus: [

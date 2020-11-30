@@ -46,7 +46,7 @@ class Footer extends React.Component {
                                 if(str === "회사소개") {
                                    return (
                                        <div key={str} className="footer-menus_item" >
-                                           <Link to="/client/mobile/company">
+                                           <Link to="/company">
                                                {str}
                                            </Link>
                                        </div>

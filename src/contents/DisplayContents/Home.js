@@ -7,10 +7,10 @@ import img4 from '../../source/img/menu1/main_image_03_bottom.png'
 function Home(props) {
     return (
         <Fragment>
-            <img src={img1} alt="" className="content-img" />
-            <img src={img2} alt="" className="content-img" />
-            <img src={img3} alt="" className="content-img" />
-            <img src={img4} alt="" className="content-img" />
+            <img src={`../../${img1}`} alt="" className="content-img" />
+            <img src={`../../${img2}`} alt="" className="content-img" />
+            <img src={`../../${img3}`} alt="" className="content-img" />
+            <img src={`../../${img4}`} alt="" className="content-img" />
         </Fragment>
     );
 }

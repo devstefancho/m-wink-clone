@@ -46,7 +46,7 @@ class App extends React.Component {
     render() {
         return (
             <Fragment>
-                <Router>
+                <Router basename="/client/mobile">
                     {this.state.banner && <Banner />}
                     <Layout>
                         <Link to="/">
@@ -55,19 +55,19 @@ class App extends React.Component {
                             </Header>
                         </Link>
                         <Switch>
-                            <Route exact path="/">
-                                <Content className="wrapper content-wrapper">
-                                    <ContentsWrapper banner={this.state.banner} />
-                                </Content>
-                            </Route>
-                            <Route path="/free-trial">
+                            <Route path="/experience">
                                 <Content className="wrapper content-wrapper">
                                    <DisplayBanner banner={this.state.banner} />
                                 </Content>
                             </Route>
-                            <Route path="/client/mobile/company">
+                            <Route path="/company">
                                 <Content className="wrapper content-wrapper">
                                     <DisplayCompany banner={this.state.banner} />
+                                </Content>
+                            </Route>
+                            <Route path="/">
+                                <Content className="wrapper content-wrapper">
+                                    <ContentsWrapper banner={this.state.banner} />
                                 </Content>
                             </Route>
                         </Switch>

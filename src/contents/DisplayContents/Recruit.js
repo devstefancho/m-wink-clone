@@ -4,7 +4,7 @@ import img1 from '../../source/img/menu5/teacher_m.jpg'
 function Recruit(props) {
     return (
         <Fragment>
-            <img src={img1} alt="" className="content-img" />
+            <img src={`../../${img1}`} alt="" className="content-img" />
         </Fragment>
     );
 }

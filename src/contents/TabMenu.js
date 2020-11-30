@@ -17,23 +17,27 @@ class TabMenu extends React.Component {
     render() {
         this.number = this.props.number;
         this.menu = this.props.menu;
+        this.url = this.props.url;
         console.log('amount of menus: ', this.number)
+        console.log('url of menus: ', this.url)
         return (
             <div>
-                <Button
-                    style={{width: `${90/this.number}vw`}}
-                    className="button"
-                    onClick={this.onClickMenu}
-                >
-                    {this.menu.map((str) =>
-                    {
-                        if(str === "br") { return (<br />) }
-                        if(str === "<") { return (<Link to="/"><FaChevronLeft className="icon icon-left" size={"1.5em"}/></Link>) }
-                        if(str === "HOME") {return (<Link to="/"><FaHome className="icon icon-right" size={"1.5em"}/></Link>) }
-                        else return str
-                    })
-                    }
-                </Button>
+                <Link to={this.url}>
+                    <Button
+                        style={{width: `${90/this.number}vw`}}
+                        className="button"
+                        onClick={this.onClickMenu}
+                    >
+                        {this.menu.map((str) =>
+                        {
+                            if(str === "br") { return (<br />) }
+                            if(str === "<") { return (<Link to="/"><FaChevronLeft className="icon icon-left" size={"1.5em"}/></Link>) }
+                            if(str === "HOME") {return (<Link to="/"><FaHome className="icon icon-right" size={"1.5em"}/></Link>) }
+                            else return str
+                        })
+                        }
+                    </Button>
+                </Link>
             </div>
         );
     }

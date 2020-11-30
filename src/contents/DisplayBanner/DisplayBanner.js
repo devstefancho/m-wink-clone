@@ -27,8 +27,8 @@ function DisplayBanner({banner}) {
                     )}
         </div>
         <div className={banner ? "sticky_content" : ""}>
-            <img src={img1} alt="" className="content-img"/>
-            <img src={img2} alt="" className="content-img"/>
+            <img src={`../../${img1}`} alt="" className="content-img"/>
+            <img src={`../../${img2}`} alt="" className="content-img"/>
         </div>
     </Fragment>
 );

@@ -35,9 +35,7 @@ class Contents extends React.Component {
     }
 
     render() {
-        // 아래는 됨
         console.log('==Q== Container Render menus', this.state.menus);
-        // return의 props로는 안넘가는 것 처럼 보임.
         this.banner = this.props.banner
         const {menus, index} = this.state;
         return(
