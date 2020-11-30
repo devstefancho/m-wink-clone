@@ -28,7 +28,10 @@ class App extends React.Component {
         };
     }
     componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('scroll', this.handleScroll, true);
+    }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
     handleScroll() {
