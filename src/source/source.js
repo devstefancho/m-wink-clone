@@ -1,3 +1,5 @@
+import {Badge} from "antd";
+
 export const menus = [
     {name: ["홈"], url: "/"},
     {name: ["과목별 학습"], subMenu: [
@@ -19,13 +21,19 @@ export const menus = [
 export const banner= {
     menus: [
         ["<"], ['무료학습 신청'], ['HOME']
-    ]
+    ],
+    process: ["배송정보 입력", "아이정보 입력", "학습단계 설정"],
+    title: ["무료학습 신청"],
+    description: ["학부모님, 배송을 위해 아래의 정보를 입력해 주세요.", "br", "입력한 배송지로 학습전용 단말기와 교재 등이 배송됩니다."],
+    label: { parentName: "이름", parent: "양육자 구분", call: "휴대폰 번호", address: "주소"},
+    placeholder: { parentName: "학부모 이름 입력", call: "휴대폰번호 입력(-생략)"},
+    information: {call: "휴대폰으로 전송된 인증번호를 입력한 후, [인증번호 확인] 버튼을 누르세요.", address: "학습기 및 교재 배송을 위해 정확한 주소를 입력해주셔야 합니다."}
 }
 
 export const company= {
     menus: [
         ["<"], ['회사소개'], ['HOME']
-    ]
+    ],
 }
 
 export const footer = {
