@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import TabMenu from "./TabMenu";
 import TabDivider from "./TabDivider";
+import TabSubMenu from "./TabSubMenu";
 
 class TabWrapper extends React.Component {
     constructor(props) {
@@ -47,7 +48,7 @@ class TabWrapper extends React.Component {
                     <div className="tab-wrapper">
                         {this.id === 1 && this.menus[this.id].subMenu.map(
                             (menu,idx) =>
-                                (<TabMenu
+                                (<TabSubMenu
                                     key={idx}
                                     idx={idx}
                                     menu={menu.name}
@@ -56,7 +57,7 @@ class TabWrapper extends React.Component {
                                     onClick={this.onClickSubMenu.bind(this)} />) )}
                         {this.id === 2 && this.menus[this.id].subMenu.map(
                             (menu,idx) =>
-                                (<TabMenu
+                                (<TabSubMenu
                                     key={idx}
                                     idx={idx}
                                     menu={menu.name}

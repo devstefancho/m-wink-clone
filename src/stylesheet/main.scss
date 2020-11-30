@@ -51,6 +51,19 @@ $banner-size: 95px;
    color: white;
    border-color: gray;
  }
+
+ &.button-sub {
+   border-radius: unset;
+   border-color: $primary-color;
+
+   &:focus{
+     background-color: $background-color;
+     border-color: $background-color;
+     color: $primary-color;
+     border-bottom: 1px solid $primary-color;
+   }
+ }
+
 }
 
 .logo {
