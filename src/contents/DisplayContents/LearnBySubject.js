@@ -28,23 +28,23 @@ function LearnBySubject({subId, onClick}) {
             <TabDivider />
             <Switch>
                 <Route path="/subject/kor">
-                    {korean_image.map(imgSrc => <img src={`../../../${imgSrc}`} alt="" className="content-img"/>) }
+                    {korean_image.map(imgSrc => <img key={imgSrc} src={`../../../${imgSrc}`} alt="" className="content-img"/>) }
                     <DetailButton url="/subject/math" contents="윙크 수학·연산 내용 자세히보기" subId={subId} onClick={onClick}/>
                 </Route>
                 <Route path="/subject/math">
-                    {math_image.map(imgSrc => <img src={`../../../${imgSrc}`} alt="" className="content-img"/>)}
+                    {math_image.map(imgSrc => <img key={imgSrc} src={`../../../${imgSrc}`} alt="" className="content-img"/>)}
                     <DetailButton url="/subject/eng" contents="윙크 영어 내용 자세히 보기" subId={subId} onClick={onClick}/>
                 </Route>
                 <Route path="/subject/eng">
-                    {english_image.map(imgSrc => <img src={`../../../${imgSrc}`} alt="" className="content-img"/>)}
+                    {english_image.map(imgSrc => <img key={imgSrc} src={`../../../${imgSrc}`} alt="" className="content-img"/>)}
                     <DetailButton url="/subject/reading" contents="윙크 독서 내용 자세히 보기" subId={subId} onClick={onClick}/>
                 </Route>
                 <Route path="/subject/reading">
-                    {reading_image.map(imgSrc => <img src={`../../../${imgSrc}`} alt="" className="content-img"/>)}
+                    {reading_image.map(imgSrc => <img key={imgSrc} src={`../../../${imgSrc}`} alt="" className="content-img"/>)}
                     <DetailButton url="/subject/activity" contents="윙크 선택활동 내용 자세히 보기" subId={subId} onClick={onClick}/>
                 </Route>
                 <Route path="/subject/activity">
-                    {activity_image.map(imgSrc => <img src={`../../../${imgSrc}`} alt="" className="content-img"/>)}
+                    {activity_image.map(imgSrc => <img key={imgSrc} src={`../../../${imgSrc}`} alt="" className="content-img"/>)}
                 </Route>
             </Switch>
         </Fragment>
