@@ -35,13 +35,14 @@ class App extends React.Component {
     }
 
     handleScroll() {
-       // console.log('scrollY ', window.scrollY);
         let currentScrollY = window.scrollY;
-        // console.log('current: ', currentScrollY);
-        if(currentScrollY > 64) {
+        let banner = this.state.banner;
+        // down scroll
+        if(!banner && currentScrollY > 64 ) {
             this.setState({banner: true});
         }
-        else {
+        // up scroll
+        else if(banner && currentScrollY < 64) {
             this.setState({banner: false});
         }
     }
