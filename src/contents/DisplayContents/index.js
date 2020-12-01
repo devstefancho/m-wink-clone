@@ -9,8 +9,6 @@ import { Route, Switch } from "react-router-dom";
 import {age, apply, main, subject, teacher} from "../../router";
 
 function DisplayContents({id, subId, banner, onClick}) {
-    console.log('DisplayContents')
-    console.table({id, subId})
     return (
         <div className={banner ? "sticky_content" : ""}>
             <Switch>

@@ -28,21 +28,20 @@ function DisplayBanner({banner}) {
     useEffect(()=>{
         fetch("/api/banner")
             .then(res => res.json())
-            .then(json => { setMenus(json.menus);
-                console.log('json: ', json)
+            .then(json => {
+                setMenus(json.menus);
                 setTitle(json.title);
                 setDescription(json.description);
                 setProcess(json.process);
                 setLabel(json.label);
                 setPlaceholder(json.placeholder);
                 setInformation(json.information);
+                console.log('banner json: ', json)
             })
-        console.log('menus: ', menus)
     }, [])
 
     const onClickImage = (who) => () => {
         setParentImage(who);
-        console.log('who: ', who);
     }
 
     return (

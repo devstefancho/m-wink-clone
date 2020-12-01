@@ -11,7 +11,6 @@ class Footer extends React.Component {
     componentDidMount() {
         fetch("/api/footer")
             .then(response => {
-                console.log('footer: ', response);
                 return response.json();
             })
             .then(json => {

@@ -11,9 +11,8 @@ function DisplayCompany({banner}) {
         fetch("/api/company")
             .then(res => res.json())
             .then(json => { setMenus(json.menus);
-                console.log('json: ', json)
+                console.log('company json: ', json)
             })
-        console.log('menus: ', menus)
     }, [])
     return (
         <Fragment>

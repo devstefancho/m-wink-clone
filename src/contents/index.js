@@ -24,18 +24,14 @@ class Contents extends React.Component {
     // id, subId setting
     onClickMenuRoot(id, subId) {
         this.setState({index: {id: id, subId: subId}})
-        console.table({id, subId})
     }
     // update sub id from detailButton component
     onClickNext() {
        const nextSubId = this.state.index.subId + 1;
        this.setState({index: { id: this.state.index.id ,subId: nextSubId }})
-        // console.log('subId return', subId);
-        console.log('go to next ? : ', nextSubId);
     }
 
     render() {
-        console.log('==Q== Container Render menus', this.state.menus);
         this.banner = this.props.banner
         const {menus, index} = this.state;
         return(

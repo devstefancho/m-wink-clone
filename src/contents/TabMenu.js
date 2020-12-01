@@ -12,8 +12,6 @@ class TabMenu extends React.Component {
     }
     onClickMenu(){
         this.props.onClick(this.props.idx)
-        console.log('bottom this connect to: ', this.props.onClick)
-        console.log('bottom onClick idx: ', this.props.idx)
     }
     render() {
         this.number = this.props.number;

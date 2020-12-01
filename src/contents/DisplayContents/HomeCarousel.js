@@ -32,6 +32,7 @@ class HomeCarousel extends React.Component {
                     >
                         {this.state.data.map(val => (
                             <video
+                                key={val}
                                 src={val.video}
                                 poster={`../../${val.image}`}
                                 controls

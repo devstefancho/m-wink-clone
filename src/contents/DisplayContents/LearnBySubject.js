@@ -23,7 +23,6 @@ function LearnBySubject({subId, onClick}) {
     const english_image = [img1_s3, img2_s3, img3_s3];
     const reading_image = [img1_s4, img2_s4, img3_s4, img4_s4, img5_s4];
     const activity_image = [img1_s5]
-    console.log('submenu selection: ', subId)
     return (
         <Fragment>
             <TabDivider />

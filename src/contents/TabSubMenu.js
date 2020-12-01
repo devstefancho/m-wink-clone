@@ -10,15 +10,11 @@ class TabSubMenu extends React.Component {
     }
     onClickMenu(){
         this.props.onClick(this.props.idx)
-        console.log('bottom this connect to: ', this.props.onClick)
-        console.log('bottom onClick idx: ', this.props.idx)
     }
     render() {
         this.number = this.props.number;
         this.menu = this.props.menu;
         this.url = this.props.url;
-        console.log('amount of menus: ', this.number)
-        console.log('url of menus: ', this.url)
         return (
             <div>
                 <Link to={this.url}>
