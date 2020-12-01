@@ -3,7 +3,9 @@ mobile page를 클론하는 것을 목표로 함.
 
 ### structure
 크게 header - contents - footer 디렉토리로 구성되어 있음.
+```
 .
+├── README.md
 ├── dist
 ├── package-lock.json
 ├── package.json
@@ -11,44 +13,43 @@ mobile page를 클론하는 것을 목표로 함.
 │   ├── favicon.ico
 │   └── index.html
 ├── src
-│   ├── App.js // 전체페이지 Route 및 layout
-│   ├── Banner.js // 하단 무료신청 배너 및 카카오톡 이미지
-│   ├── README.md
+│   ├── App.js       // 전체페이지 Route 및 layout
+│   ├── Banner.js    // 하단 무료신청 배너 및 카카오톡 이미지
 │   ├── contents
-│   │   ├── DetailButton.js // 과목별 학습의 페이지 넘어가는 버튼 (하단에 위치)
-│   │   ├── DisplayBanner 
-│   │   │   └── DisplayBanner.js // 무료신청 배너를 눌렀을 때 랜더링되는 페이지
-│   │   ├── DisplayCompany 
-│   │   │   └── DisplayCompany.js // 회사소개 페이지
-│   │   ├── DisplayContents // 메뉴의 컨텐츠 랜더링
-│   │   │   ├── Home.js // 홈
-│   │   │   ├── HomeCarousel.js // 홈의 이미지 슬라이더
-│   │   │   ├── LearnByAges.js // 연령별 학습
-│   │   │   ├── LearnBySubject.js // 과목별 학습
-│   │   │   ├── Recruit.js // 윙크 선생님 모집
-│   │   │   ├── Registration.js // 유료학습 신청
-│   │   │   └── index.js // 위 페이지들의 layout 페이지
-│   │   ├── Subject.js // unused
-│   │   ├── TabButton.js // unused
-│   │   ├── TabDivider.js // main 메뉴와 sub 메뉴 사이의 white space 
-│   │   ├── TabMenu.s // main 메뉴 탭
-│   │   ├── TabSubMenu.js // sub 메뉴 탭
-│   │   ├── TabWrapper.js // main 메뉴(혹은 sub 메뉴)를 감쌈
-│   │   └── index.js // TabWrapper와 DisplayContents의 index
+│   │   ├── DetailButton.js             // 과목별 학습의 페이지 넘어가는 버튼 (하단에 위치)
+│   │   ├── DisplayBanner
+│   │   │   └── DisplayBanner.js        // 무료신청 배너를 눌렀을 때 랜더링되는 페이지
+│   │   ├── DisplayCompany              // 회사소개 페이지
+│   │   │   └── DisplayCompany.js
+│   │   ├── DisplayContents             // 메뉴의 컨텐츠 랜더링
+│   │   │   ├── Home.js                 // 홈
+│   │   │   ├── HomeCarousel.js         // 홈의 이미지 슬라이더
+│   │   │   ├── LearnByAges.js          // 연령별 학습
+│   │   │   ├── LearnBySubject.js       // 과목별 학습
+│   │   │   ├── Recruit.js              // 윙크 선생님 모집
+│   │   │   ├── Registration.js         // 유료학습 신청
+│   │   │   └── index.js                // index.js
+│   │   ├── TabDivider.js               // main 메뉴와 서브메뉴 사이에 있는 white space
+│   │   ├── TabMainMenu.js              // main 메뉴 탭
+│   │   ├── TabMenu.js                  // 무료신청, 회사소개에 사용되는 메뉴 탭
+│   │   ├── TabSubMenu.js               // sub 메뉴 탭
+│   │   ├── TabWrapper.js               // 메뉴 탭의 Wrapper
+│   │   └── index.js                    // TabWrapper, DisplayContents의 index.js
 │   ├── footer
-│   │   └── index.js // footer의 메뉴 및 카피라이트 정보 포함
+│   │   └── index.js        // footer 메뉴 및 copyright
 │   ├── header
-│   │   └── index.js // 로고
-│   ├── index.js // App.js를 포함
-│   ├── server.js // backend 가상 api
-│   ├── source // image 및 source 디렉토리
-│   │   └── source.js // 데이터베이스
+│   │   └── index.js        // wink logo
+│   ├── index.js
+│   ├── router.js                 // url router 변수들
+│   ├── server.js                 // 가상 backend api
+│   ├── source                    // database
+│   │   └── source.js
 │   └── stylesheet
-│       └── main.scss // css
-├── webpack.config.common.js // 공통 script
-├── webpack.config.dev.js // 개발 script
-└── webpack.config.prod.js // build script
-
+│       └── main.scss             // 공통 css
+├── webpack.config.common.js             // 공통 script
+├── webpack.config.dev.js                // 개발 script
+└── webpack.config.prod.js               // 빌드 script
+```
 ### features
 
 #### webpack 구성
