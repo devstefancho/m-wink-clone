@@ -20,8 +20,7 @@ function DisplayCompany({banner}) {
                 {menus.map(menu =>
                     <TabMenu
                         key={menu}
-                        menu={menu}
-                        number={3} />
+                        menu={menu} />
                 )}
             </div>
             <div className={banner ? "sticky_content" : ""}>

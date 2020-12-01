@@ -14,7 +14,6 @@ class TabMainMenu extends React.Component {
         this.props.onClick(this.props.idx)
     }
     render() {
-        this.number = this.props.number;
         this.menu = this.props.menu;
         this.url = this.props.url;
         let pathBool = false;
@@ -27,8 +26,7 @@ class TabMainMenu extends React.Component {
             <div>
                 <Link to={this.url.path + this.url.params}>
                     <Button
-                        style={{width: `${90/this.number}vw`}}
-                        className={`button ${ pathBool ? "button-active" : null}`}
+                        className={`button button-main ${ pathBool ? "button-active" : null}`}
                         onClick={this.onClickMenu}
                     >
                         {this.menu.map((str) =>

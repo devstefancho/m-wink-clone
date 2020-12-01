@@ -24,6 +24,9 @@ $banner-size: 95px;
   margin-bottom: 5px;
   height: 50px;
   z-index: 999;
+  & > div {
+    flex-basis: 100%;
+  }
 }
 
 .divider {
@@ -60,15 +63,19 @@ $banner-size: 95px;
   &.button-sub {
     border-radius: unset;
     border-color: $primary-color;
+    width: 100%;
 
-   &:focus{
-     background-color: $background-color;
-     border-color: $background-color;
-     color: $primary-color;
-     border-bottom: 1px solid $primary-color;
-   }
- }
+    &:focus{
+      background-color: $background-color;
+      border-color: $background-color;
+      color: $primary-color;
+      border-bottom: 1px solid $primary-color;
+    }
+  }
 
+  &.button-main {
+    width: 100%;
+  }
 }
 
 .logo {

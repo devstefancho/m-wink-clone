@@ -10,14 +10,12 @@ class TabMenu extends React.Component {
         super(props);
     }
     render() {
-        this.number = this.props.number;
         this.menu = this.props.menu;
         this.url = this.props.url;
         return (
             <div>
                 <Button
-                    style={{width: `${90/this.number}vw`}}
-                    className="button"
+                    className="button button-main"
                 >
                     {this.menu.map((str) =>
                     {

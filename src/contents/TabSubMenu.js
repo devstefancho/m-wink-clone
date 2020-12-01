@@ -12,14 +12,12 @@ class TabSubMenu extends React.Component {
         this.props.onClick(this.props.idx)
     }
     render() {
-        this.number = this.props.number;
         this.menu = this.props.menu;
         this.url = this.props.url;
         return (
             <div>
                 <Link to={this.url}>
                     <Button
-                        style={{width: `${90/this.number}vw`}}
                         className="button button-sub"
                         onClick={this.onClickMenu}
                     >
