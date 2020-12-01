@@ -8,10 +8,6 @@ import {main} from "../router";
 class TabMenu extends React.Component {
     constructor(props) {
         super(props);
-        this.onClickMenu = this.onClickMenu.bind(this);
-    }
-    onClickMenu(){
-        this.props.onClick(this.props.idx)
     }
     render() {
         this.number = this.props.number;
@@ -22,7 +18,6 @@ class TabMenu extends React.Component {
                 <Button
                     style={{width: `${90/this.number}vw`}}
                     className="button"
-                    onClick={this.onClickMenu}
                 >
                     {this.menu.map((str) =>
                     {
