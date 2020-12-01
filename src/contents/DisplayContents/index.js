@@ -6,6 +6,7 @@ import Registration from "./Registration";
 import Recruit from "./Recruit";
 import HomeCarousel from "./HomeCarousel";
 import { Route, Switch } from "react-router-dom";
+import {age, apply, main, subject, teacher} from "../../router";
 
 function DisplayContents({id, subId, banner, onClick}) {
     console.log('DisplayContents')
@@ -13,20 +14,20 @@ function DisplayContents({id, subId, banner, onClick}) {
     return (
         <div className={banner ? "sticky_content" : ""}>
             <Switch>
-                <Route exact path="/">
+                <Route exact path={main}>
                     <HomeCarousel />
                     <Home />
                 </Route>
-                <Route path="/subject">
+                <Route path={subject}>
                     <LearnBySubject subId={subId} onClick={onClick} />
                 </Route>
-                <Route path="/age">
+                <Route path={age}>
                     <LearnByAges subId={subId}/>
                 </Route>
-                <Route path="/apply">
+                <Route path={apply}>
                     <Registration />
                 </Route>
-                <Route path="/teacher">
+                <Route path={teacher}>
                     <Recruit />
                 </Route>
             </Switch>

@@ -3,6 +3,8 @@ import TabMenu from "./TabMenu";
 import TabDivider from "./TabDivider";
 import TabSubMenu from "./TabSubMenu";
 import {Route, Switch} from "react-router-dom";
+import {age, subject} from "../router";
+import TabMainMenu from "./TabMainMenu";
 
 class TabWrapper extends React.Component {
     constructor(props) {
@@ -33,7 +35,7 @@ class TabWrapper extends React.Component {
                 <div className="tab-wrapper">
                     {this.menus && this.menus.map(
                         (menu,idx) =>
-                            (<TabMenu
+                            (<TabMainMenu
                                 key={idx}
                                 idx={idx}
                                 menu={menu.name}
@@ -48,7 +50,7 @@ class TabWrapper extends React.Component {
                     <TabDivider />
                     <div className="tab-wrapper">
                         <Switch>
-                            <Route path="/subject">
+                            <Route path={subject}>
                                 {this.menus[this.id].subMenu.map(
                                     (menu,idx) =>
                                         (<TabSubMenu
@@ -56,10 +58,10 @@ class TabWrapper extends React.Component {
                                             idx={idx}
                                             menu={menu.name}
                                             number={this.menus[this.id].subMenu.length}
-                                            url={menu.url}
+                                            url={menu.url.path + menu.url.params}
                                             onClick={this.onClickSubMenu.bind(this)} />) )}
                             </Route>
-                            <Route path="/age">
+                            <Route path={age}>
                                 {this.menus[this.id].subMenu.map(
                                     (menu,idx) =>
                                         (<TabSubMenu

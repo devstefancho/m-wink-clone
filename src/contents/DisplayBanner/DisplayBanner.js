@@ -63,7 +63,7 @@ function DisplayBanner({banner}) {
             {title}
         </h2>
         <div className="experience-box">
-            {description.map(str => (str === "br" ? <br /> : str))}
+            {description.map((str) => (str === "br" ? <br key={str} /> : str))}
         </div>
         <div className="experience-box">
             <div className="flexbox input-form-single">

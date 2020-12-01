@@ -46,15 +46,20 @@ $banner-size: 95px;
   line-height: 13px;
   letter-spacing: -1px;
 
- &:focus{
-   background-color: $primary-color;
-   color: white;
-   border-color: gray;
- }
+  &:focus{
+    background-color: $primary-color;
+    color: white;
+    border-color: gray;
+  }
+  &.button-active {
+    background-color: $primary-color;
+    color: white;
+    border-color: gray;
+  }
 
- &.button-sub {
-   border-radius: unset;
-   border-color: $primary-color;
+  &.button-sub {
+    border-radius: unset;
+    border-color: $primary-color;
 
    &:focus{
      background-color: $background-color;

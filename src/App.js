@@ -16,6 +16,7 @@ import DisplayBanner from "./contents/DisplayBanner/DisplayBanner";
 import TabDivider from "./contents/TabDivider";
 import DisplayContents from "./contents/DisplayContents";
 import DisplayCompany from "./contents/DisplayCompany/DisplayCompany";
+import {company, experience, main} from "./router";
 
 
 const {Header, Content, Footer} = Layout
@@ -59,17 +60,17 @@ class App extends React.Component {
                             </Header>
                         </Link>
                         <Switch>
-                            <Route path="/experience">
+                            <Route path={experience}>
                                 <Content className="wrapper content-wrapper">
                                    <DisplayBanner banner={this.state.banner} />
                                 </Content>
                             </Route>
-                            <Route path="/company">
+                            <Route path={company}>
                                 <Content className="wrapper content-wrapper">
                                     <DisplayCompany banner={this.state.banner} />
                                 </Content>
                             </Route>
-                            <Route path="/">
+                            <Route path={main}>
                                 <Content className="wrapper content-wrapper">
                                     <ContentsWrapper banner={this.state.banner} />
                                 </Content>
