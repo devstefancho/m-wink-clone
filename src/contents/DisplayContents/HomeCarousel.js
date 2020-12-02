@@ -18,6 +18,11 @@ class HomeCarousel extends React.Component {
         }
     }
     componentDidMount() {
+        // carousel image resize, resize 이슈가 있어 추가된 코드, video element의 height를 직접 바꿔도 된다.
+        // github : FormidableLabs/nuka-carousel/issues/103
+        setTimeout(() => {
+            window.dispatchEvent(new Event('resize'));
+        }, 0);
     }
 
     render() {
@@ -36,11 +41,8 @@ class HomeCarousel extends React.Component {
                                 src={val.video}
                                 poster={`../../${val.image}`}
                                 controls
-                                style={{ width: '100%', verticalAlign: 'top' }}
+                                style={{ width: '100%', verticalAlign: 'top', height: 'auto' }}
                                 onLoad={() => {
-                                    // fire window resize event to change height
-                                    window.dispatchEvent(new Event('resize'));
-                                    this.setState({ imgHeight: 'auto' });
                                 }}
                             />
                         ))}
